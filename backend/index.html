@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Classification Demo</title>
+</head>
+<body>
+  <h2>Enter Data for Classification</h2>
+  <input id="inputData" placeholder="Enter numbers comma separated" />
+  <button onclick="predict()">Predict</button>
+  <p id="result"></p>
+
+  <script>
+    async function predict() {
+      const input = document.getElementById('inputData').value
+        .split(',')
+        .map(Number);
+
+      const response = await fetch('http://localhost:3000/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: input })
+      });
+
+      const result = await response.json();
+      document.getElementById('result').innerText = 'Prediction: ' + result.prediction;
+    }
+  </script>
+</body>
+</html>

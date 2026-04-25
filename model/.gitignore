@@ -1,0 +1,36 @@
+git push -u origin# Virtual Environment
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv_py312/
+.venv_py312b/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Logs
+*.log
+
+# ML Models (optional - uncomment if you don't want to track model files)
+# *.h5
+# *.keras
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
